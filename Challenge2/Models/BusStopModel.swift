@@ -13,4 +13,5 @@ struct BusStop: Identifiable {
     let latitude: Double
     let longitude: Double
     let name: String
+    let image: String
 }

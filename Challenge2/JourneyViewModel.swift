@@ -17,14 +17,18 @@ class RouteTrackerViewModel: NSObject, ObservableObject, CLLocationManagerDelega
 //        .init(latitude: -6.2910308837890625, longitude: 106.6497573852539),
 //        .init(latitude: -6.2914483878678205, longitude: 106.64828959444202)
         
-        .init(latitude: CLLocationCoordinate2D.studento2.latitude, longitude: CLLocationCoordinate2D.studento2.longitude, name: "Studento 2"),
-        .init(latitude: CLLocationCoordinate2D.albera.latitude, longitude: CLLocationCoordinate2D.albera.longitude, name: "Albera"),
-        .init(latitude: CLLocationCoordinate2D.foresta1.latitude, longitude: CLLocationCoordinate2D.foresta1.longitude, name: "Foresta 1"),
-        .init(latitude: CLLocationCoordinate2D.gop1.latitude, longitude: CLLocationCoordinate2D.gop1.longitude, name: "GOP 1"),
-        .init(latitude: CLLocationCoordinate2D.smlPlaza.latitude, longitude: CLLocationCoordinate2D.smlPlaza.longitude, name: "SML Plaza"),
+        .init(latitude: CLLocationCoordinate2D.studento2.latitude, longitude: CLLocationCoordinate2D.studento2.longitude, name: "Studento 2", image: "studento2"),
+        .init(latitude: CLLocationCoordinate2D.albera.latitude, longitude: CLLocationCoordinate2D.albera.longitude, name: "Albera", image: "albera"),
+        .init(latitude: CLLocationCoordinate2D.foresta1.latitude, longitude: CLLocationCoordinate2D.foresta1.longitude, name: "Foresta 1", image: "studento2"),
+        .init(latitude: CLLocationCoordinate2D.gop1.latitude, longitude: CLLocationCoordinate2D.gop1.longitude, name: "GOP 1", image: "studento2"),
+        .init(latitude: CLLocationCoordinate2D.smlPlaza.latitude, longitude: CLLocationCoordinate2D.smlPlaza.longitude, name: "SML Plaza", image: "studento2"),
         
     ]
 
+    var busStopList: [BusStop] {
+        return busStops
+    }
+    
     private let locationManager = CLLocationManager()
     private let proximityThreshold: Double = 20.0 // meters
 
@@ -54,5 +58,9 @@ class RouteTrackerViewModel: NSObject, ObservableObject, CLLocationManagerDelega
     
     func getLocationName(index: Int) -> String {
         return busStops[index].name
+    }
+    
+    func getImage(index: Int) -> String {
+        return busStops[index].image
     }
 }
