@@ -30,7 +30,7 @@ class RouteTrackerViewModel: NSObject, ObservableObject, CLLocationManagerDelega
     }
     
     private let locationManager = CLLocationManager()
-    private let proximityThreshold: Double = 20.0 // meters
+    private let proximityThreshold: Double = 50.0 // meters
 
     override init() {
         self.totalBusStops = busStops.count
@@ -38,7 +38,7 @@ class RouteTrackerViewModel: NSObject, ObservableObject, CLLocationManagerDelega
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 3
+//        locationManager.distanceFilter = 3
         locationManager.startUpdatingLocation()
     }
 
