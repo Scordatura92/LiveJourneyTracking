@@ -158,6 +158,7 @@ struct routeSheet: View {
                 
                 NavigationLink {
                     RouteProgressView(route: route, startIndex: startIndex, endIndex: endIndex)
+                    
                 } label: {
                     Text("Start Journey")
                         .foregroundStyle(.white)

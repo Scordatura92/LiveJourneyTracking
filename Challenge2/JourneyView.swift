@@ -186,6 +186,7 @@ struct RouteProgressView: View {
                                                     if index < viewModel.currentBusStopIndex {
                                                         Image(systemName: "checkmark")
                                                             .foregroundColor(.white)
+                                                            .sensoryFeedback(.selection, trigger: index < viewModel.currentBusStopIndex)
                                                     }
                                                 }
                                             )
