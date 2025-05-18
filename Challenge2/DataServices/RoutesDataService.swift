@@ -8,8 +8,56 @@
 import Foundation
 import CoreLocation
 
+let routes: [RouteModel] = [route2a, route3, route4]
+
+let route4: RouteModel = .init(
+    name: "Terminal Intermoda - De Park - Terminal Intermoda (Rute 2)",
+    number: "4",
+    busStops: [
+        .init(latitude: CLLocationCoordinate2D.intermoda.latitude, longitude: CLLocationCoordinate2D.intermoda.longitude, name: "Intermoda", image: "intermoda"),
+        .init(latitude: CLLocationCoordinate2D.iconCentro.latitude, longitude: CLLocationCoordinate2D.iconCentro.longitude, name: "Icon Centro", image: "iconCentro"),
+        .init(latitude: CLLocationCoordinate2D.horizonBroadway.latitude, longitude: CLLocationCoordinate2D.horizonBroadway.longitude, name: "Horizon Broadway", image: "horizonBroadwy"),
+        .init(latitude: CLLocationCoordinate2D.extremePark.latitude, longitude: CLLocationCoordinate2D.extremePark.longitude, name: "Extreme Park", image: "extremePark"),
+        .init(latitude: CLLocationCoordinate2D.saveria.latitude, longitude: CLLocationCoordinate2D.saveria.longitude, name: "Saveria", image: "saveria"),
+        .init(latitude: CLLocationCoordinate2D.casaDeParco1.latitude, longitude: CLLocationCoordinate2D.casaDeParco1.longitude, name: "Casa De Parco 1", image: "casaDeParco1"),
+        .init(latitude: CLLocationCoordinate2D.smlPlaza.latitude, longitude: CLLocationCoordinate2D.smlPlaza.longitude, name: "SML Plaza", image: "smlPlaza"),
+        .init(latitude: CLLocationCoordinate2D.theBreeze.latitude, longitude: CLLocationCoordinate2D.theBreeze.longitude, name: "The Breeze", image: "theBreeze"),
+        .init(latitude: CLLocationCoordinate2D.cbdTimur1.latitude, longitude: CLLocationCoordinate2D.cbdTimur1.longitude, name: "CBD Timur 1", image: "cbdTimur1"),
+        .init(latitude: CLLocationCoordinate2D.aeonMall1.latitude, longitude: CLLocationCoordinate2D.aeonMall1.longitude, name: "Aeon Mall 1", image: "aeonMall1"),
+        .init(latitude: CLLocationCoordinate2D.aeonMall2.latitude, longitude: CLLocationCoordinate2D.aeonMall2.longitude, name: "Aeon Mall 2", image: "aeonMall2"),
+        .init(latitude: CLLocationCoordinate2D.cbdTimurGop2.latitude, longitude: CLLocationCoordinate2D.cbdTimurGop2.longitude, name: "CBD Timur 2", image: "cbdTimur2"),
+        .init(latitude: CLLocationCoordinate2D.simpangForesta.latitude, longitude: CLLocationCoordinate2D.simpangForesta.longitude, name: "Simpang Foresta", image: "simpangForesta"),
+        .init(latitude: CLLocationCoordinate2D.allevare.latitude, longitude: CLLocationCoordinate2D.allevare.longitude, name: "Allevare", image: "allevare"),
+        .init(latitude: CLLocationCoordinate2D.fiore.latitude, longitude: CLLocationCoordinate2D.fiore.longitude, name: "Fiore", image: "fiore"),
+        .init(latitude: CLLocationCoordinate2D.studento1.latitude, longitude: CLLocationCoordinate2D.studento1.longitude, name: "Studento 1", image: "studento1"),
+        .init(latitude: CLLocationCoordinate2D.naturale.latitude, longitude: CLLocationCoordinate2D.naturale.longitude, name: "Naturale", image: "naturale"),
+        .init(latitude: CLLocationCoordinate2D.fresco.latitude, longitude: CLLocationCoordinate2D.fresco.longitude, name: "Fresco", image: "fresco"),
+        .init(latitude: CLLocationCoordinate2D.primavera.latitude, longitude: CLLocationCoordinate2D.primavera.longitude, name: "Primavera", image: "default"),
+        .init(latitude: CLLocationCoordinate2D.foresta2.latitude, longitude: CLLocationCoordinate2D.foresta2.longitude, name: "Foresta 2", image: "foresta2"),
+        .init(latitude: CLLocationCoordinate2D.dePark1.latitude, longitude: CLLocationCoordinate2D.dePark1.longitude, name: "De Park 1", image: "dePark1"),
+        .init(latitude: CLLocationCoordinate2D.deFrangpani.latitude, longitude: CLLocationCoordinate2D.deFrangpani.longitude, name: "De Frangipani", image: "deFrangipani"),
+        .init(latitude: CLLocationCoordinate2D.deHeliconia1.latitude, longitude: CLLocationCoordinate2D.deHeliconia1.longitude, name: "De Heliconia 1", image: "deHeliconia1"),
+        .init(latitude: CLLocationCoordinate2D.deBrassia.latitude, longitude: CLLocationCoordinate2D.deBrassia.longitude, name: "De Brassia", image: "deBrassia"),
+        .init(latitude: CLLocationCoordinate2D.jadeite.latitude, longitude: CLLocationCoordinate2D.jadeite.longitude, name: "Jadeite", image: "jadeite"),
+        .init(latitude: CLLocationCoordinate2D.greenwichPark2.latitude, longitude: CLLocationCoordinate2D.greenwichPark2.longitude, name: "Greenwich Park 2", image: "greenwichPark2"),
+        .init(latitude: CLLocationCoordinate2D.qBig2.latitude, longitude: CLLocationCoordinate2D.qBig2.longitude, name: "QBig 2", image: "default"),
+        .init(latitude: CLLocationCoordinate2D.qBig3.latitude, longitude: CLLocationCoordinate2D.qBig3.longitude, name: "QBig 3", image: "default"),
+        .init(latitude: CLLocationCoordinate2D.bca.latitude, longitude: CLLocationCoordinate2D.bca.longitude, name: "BCA", image: "bca"),
+        .init(latitude: CLLocationCoordinate2D.fbl2.latitude, longitude: CLLocationCoordinate2D.fbl2.longitude, name: "FBL 2", image: "fbl2"),
+        .init(latitude: CLLocationCoordinate2D.fbl1.latitude, longitude: CLLocationCoordinate2D.fbl1.longitude, name: "FBL 1", image: "fbl1"),
+        .init(latitude: CLLocationCoordinate2D.ice1.latitude, longitude: CLLocationCoordinate2D.ice1.longitude, name: "ICE 1", image: "ice1"),
+        .init(latitude: CLLocationCoordinate2D.ice2.latitude, longitude: CLLocationCoordinate2D.ice2.longitude, name: "ICE 2", image: "ice2"),
+        .init(latitude: CLLocationCoordinate2D.ice6.latitude, longitude: CLLocationCoordinate2D.ice6.longitude, name: "ICE 6", image: "ice6"),
+        .init(latitude: CLLocationCoordinate2D.ice5.latitude, longitude: CLLocationCoordinate2D.ice5.longitude, name: "ICE 5", image: "ice5"),
+        .init(latitude: CLLocationCoordinate2D.cbdBarat1.latitude, longitude: CLLocationCoordinate2D.cbdBarat1.longitude, name: "CBD Barat 1", image: "cbdBarat1"),
+        .init(latitude: CLLocationCoordinate2D.cbdBarat2.latitude, longitude: CLLocationCoordinate2D.cbdBarat2.longitude, name: "CBD Barat 2", image: "cbdBarat2"),
+        .init(latitude: CLLocationCoordinate2D.simplicity1.latitude, longitude: CLLocationCoordinate2D.simplicity1.longitude, name: "Simplicity 1", image: "simplicity1"),
+        .init(latitude: CLLocationCoordinate2D.intermoda.latitude, longitude: CLLocationCoordinate2D.intermoda.longitude, name: "Intermoda", image: "intermoda")
+    ]
+)
+
 let route3: RouteModel = .init(
-    name: "Terminal Intermoda - De Park - Terminal Intermoda",
+    name: "Terminal Intermoda - De Park - Terminal Intermoda (Rute 1)",
     number: "3",
     busStops: [
         .init(latitude: CLLocationCoordinate2D.intermoda.latitude, longitude: CLLocationCoordinate2D.intermoda.longitude, name: "Intermoda", image: "intermoda"),

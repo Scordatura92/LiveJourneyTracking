@@ -6,44 +6,26 @@
 //
 
 import SwiftUI
-import Foundation
-
 
 struct SearchView: View {
-    @State private var startingPoint: String = ""
-    @State private var destinationPoint: String = ""
-    @State private var activeTextField: String = ""
-    @State private var isTimePicked: Bool = false
-    @State private var showLocationSearchView: Bool = false
-    
     var body: some View {
-        VStack {
-//            SearchCard(
-//                searchHandler: {},
-//                filterHandler: {
-//                    
-//                },
-//                swapHandler: {},
-//                resetResultsCompletion: {},
-//                startingPoint: $startingPoint,
-//                destinationPoint: $destinationPoint,
-//                activeTextField: $activeTextField,
-//                isTimePicked: $isTimePicked,
-//                showSearchLocationView: $showLocationSearchView) {
-//                    showLocationSearchView.toggle()
-//                }
-//            
-//            
-//            QuickSearch(
-//                startingPoint: $startingPoint,
-//                destinationPoint: $destinationPoint
-//            )
-            
-            
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(routes) { route in
+                        NavigationLink(destination: ChooseStopsView(route: route)) {
+                            RouteTile(routeName: route.name, stops: route.busStops.count)
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Routes")
         }
     }
 }
 
+
 #Preview {
     SearchView()
 }
+
